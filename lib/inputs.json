@@ -1,0 +1,17 @@
+{
+    "to": "required|array",
+    "cc": "sometimes|array",
+    "bcc": "sometimes|array",
+    "from": "required|string",
+    "replyTo": "sometimes|string",
+    "subject": "requiredWithout:templateId|string",
+    "text": "sometimes|string",
+    "html": "sometimes|string",
+    "headers": "sometimes|object",
+    "attachments": "sometimes|array",
+    "attachments.*.content": "required|base64",
+    "attachments.*.filename": "required|string",
+    "attachments.*.type": "required|string",
+    "templateId": "sometimes|string",
+    "templateData": "sometimes|object"
+}

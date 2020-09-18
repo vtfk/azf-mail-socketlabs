@@ -1,0 +1,4 @@
+module.exports = {
+  SOCKETLABS_SERVER_ID: process.env.SOCKETLABS_SERVER_ID,
+  SOCKETLABS_API_KEY: process.env.SOCKETLABS_API_KEY
+}
