@@ -11,6 +11,7 @@
   "license": "ISC",
   "dependencies": {
     "@socketlabs/email": "1.1.0",
+    "handlebars": "4.7.6",
     "node-input-validator": "^4.2.0"
   }
 }
