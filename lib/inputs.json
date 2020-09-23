@@ -4,7 +4,7 @@
     "bcc": "sometimes|array",
     "from": "required|string",
     "replyTo": "sometimes|string",
-    "subject": "requiredWithout:templateId|string",
+    "subject": "required|string",
     "text": "sometimes|string",
     "html": "sometimes|string",
     "headers": "sometimes|object",
@@ -12,6 +12,8 @@
     "attachments.*.content": "required|base64",
     "attachments.*.filename": "required|string",
     "attachments.*.type": "required|string",
-    "templateId": "sometimes|string",
-    "templateData": "sometimes|object"
+    "template": "sometimes|object",
+    "template.*.template": "sometimes|string",
+    "template.*.templateName": "sometimes|string",
+    "template.*.templateData": "required|object"
 }
