@@ -1,6 +1,31 @@
 # Azure function mail socketlabs
 
-## input without templating
+# Development setup
+Create/Update **local.settings.json** with this:
+```javascript
+{
+    "IsEncrypted": false,
+    "Values": {
+      "FUNCTIONS_WORKER_RUNTIME": "node",
+      "AzureWebJobsStorage": "UseDevelopmentStorage=true",
+      "AzureWebJobsServiceBus": "",
+      "SOCKETLABS_SERVER_ID": your-socketlabs-server-id,
+      "SOCKETLABS_API_KEY": "your-socketlabs-api-key"
+    },
+    "ConnectionStrings": {}
+  }
+```
+
+# Setup in Azure
+
+1. Publish Azure function
+1. In Configuration in your Azure function, add these Application settings
+    1. SOCKETLABS_SERVER_ID
+    1. SOCKETLABS_API_KEY
+
+# Inputs
+
+## without templating
 
 ```javascript
 {
@@ -21,7 +46,7 @@
 }
 ```
 
-## input with templating
+## with templating
 
 ```javascript
 {
@@ -54,7 +79,7 @@
 }
 ```
 
-## attachments
+## with attachments
 
 ```javascript
 {
