@@ -60,9 +60,9 @@ Create/Update **local.settings.json** with this:
     "bcc": [
         "rolf@nordmann.no"
     ],
-	"from": "Ola Nordmann <ola@nordmann.no>",
-	"subject": "Test",
-	"template": {
+    "from": "Ola Nordmann <ola@nordmann.no>",
+    "subject": "Test",
+    "template": {
         "templateName": "example",
         "templateData": {
             "body": "<i>Something</i>.",
