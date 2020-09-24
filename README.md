@@ -29,9 +29,9 @@ Create/Update **local.settings.json** with this:
 
 ```javascript
 {
-	"to": [
-		"kari@nordmann.no",
-		"bjarne@nordmann.no"
+    "to": [
+        "kari@nordmann.no",
+        "bjarne@nordmann.no"
     ],
     "cc": [
         "kjartan@nordmann.no"
@@ -50,9 +50,9 @@ Create/Update **local.settings.json** with this:
 
 ```javascript
 {
-	"to": [
-		"kari@nordmann.no",
-		"bjarne@nordmann.no"
+    "to": [
+        "kari@nordmann.no",
+        "bjarne@nordmann.no"
     ],
     "cc": [
         "kjartan@nordmann.no"
@@ -83,7 +83,7 @@ Create/Update **local.settings.json** with this:
 
 ```javascript
 {
-	...
+    ...
     "attachments": [
         {
             "content": "document in base64",
