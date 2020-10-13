@@ -26,7 +26,7 @@ Create/Update **local.settings.json** with this:
     1. SOCKETLABS_SERVER_ID
     1. SOCKETLABS_API_KEY
 
-## Inputs
+## Inputs (POST)
 
 ### without templating
 
@@ -94,5 +94,19 @@ Create/Update **local.settings.json** with this:
             "type": "application/json"
         }
     ]
+}
+```
+
+## Get template handlebars (GET)
+
+### Get all templates (no body are actually needed)
+```javascript
+{}
+```
+
+### Get specific template
+```javascript
+{
+    "template": "example"
 }
 ```
