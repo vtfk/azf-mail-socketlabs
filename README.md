@@ -1,6 +1,9 @@
 # Azure function mail socketlabs
 
-# Development setup
+## Setup
+
+### Development setup
+
 Create/Update **local.settings.json** with this:
 ```javascript
 {
@@ -16,16 +19,16 @@ Create/Update **local.settings.json** with this:
   }
 ```
 
-# Setup in Azure
+### Setup in Azure
 
 1. Publish Azure function
 1. In Configuration in your Azure function, add these Application settings
     1. SOCKETLABS_SERVER_ID
     1. SOCKETLABS_API_KEY
 
-# Inputs
+## Inputs
 
-## without templating
+### without templating
 
 ```javascript
 {
@@ -46,7 +49,7 @@ Create/Update **local.settings.json** with this:
 }
 ```
 
-## with templating
+### with templating
 
 ```javascript
 {
@@ -79,7 +82,7 @@ Create/Update **local.settings.json** with this:
 }
 ```
 
-## with attachments
+### with attachments
 
 ```javascript
 {
