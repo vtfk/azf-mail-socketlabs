@@ -6,8 +6,7 @@ const dirPath = `${__dirname}/../lib/templates`;
 
 module.exports = async function (context, req) {
     context.log('JavaScript HTTP trigger function processed a request.');
-
-    context.log(req.body);
+    
     let templates = [];
     fs.readdirSync(dirPath).map(fileName => {
         let template = require(`${dirPath}/${fileName}`)();
