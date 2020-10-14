@@ -8,10 +8,20 @@ module.exports = async function (context, req) {
     context.log('JavaScript HTTP trigger function processed a request.');
     
     let templates = [];
+
+    if (!req.params.template) {
+        context.res = {
+            status: 400,
+            body: "Template name missing in the url"
+        };
+        return;
+    }
+
     fs.readdirSync(dirPath).map(fileName => {
         let template = require(`${dirPath}/${fileName}`)();
         let fileNameWithoutExtension = fileName.replace(path.extname(fileName), '');
-        if ((!req.body || !req.body.template) || (req.body.template && req.body.template.toLowerCase() === fileNameWithoutExtension.toLowerCase())) {
+
+        if ((req.params.template.toLowerCase() === 'all') || (req.params.template.toLowerCase() === fileNameWithoutExtension.toLowerCase())) {
             templates.push({
                 name: fileNameWithoutExtension,
                 schema: barhandles.extractSchema(template)
