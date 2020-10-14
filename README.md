@@ -28,6 +28,8 @@ Create/Update **local.settings.json** with this:
 
 ## Inputs (POST)
 
+/SendMail
+
 ### without templating
 
 ```javascript
@@ -97,16 +99,11 @@ Create/Update **local.settings.json** with this:
 }
 ```
 
-## Get template handlebars (GET)
+## Get template handlebars (GET) (*template/{template}*)
 
-### Get all templates (no body are actually needed)
-```javascript
-{}
-```
+### Get all templates
+/template/all
+
 
 ### Get specific template
-```javascript
-{
-    "template": "example"
-}
-```
+/template/example
