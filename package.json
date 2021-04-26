@@ -10,7 +10,7 @@
   "author": "Rune Moskvil Lyngås <rune.moskvil.lyngaas@vtfk.no>",
   "license": "ISC",
   "dependencies": {
-    "@socketlabs/email": "1.1.0",
+    "@socketlabs/email": "1.1.1",
     "barhandles": "0.5.4",
     "handlebars": "4.7.6",
     "node-input-validator": "^4.2.0"
