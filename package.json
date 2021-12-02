@@ -4,6 +4,7 @@
   "description": "",
   "main": "index.js",
   "scripts": {
+    "refresh": "rm -rf node_modules && rm package-lock.json && npm i",
     "start": "func start",
     "test": "standard"
   },
