@@ -28,7 +28,7 @@ Create/Update **local.settings.json** with this:
 
 ## Inputs (POST)
 
-/SendMail
+/mail
 
 ### without templating
 
