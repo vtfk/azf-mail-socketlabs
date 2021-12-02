@@ -22,8 +22,6 @@ project.lock.json
 appsettings.json
 local.settings.json
 
-/lib/templates/vtfk.js
-
 node_modules
 dist
 
