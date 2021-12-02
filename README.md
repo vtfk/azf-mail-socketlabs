@@ -88,7 +88,7 @@ Create/Update **local.settings.json** with this:
 
 ```javascript
 {
-    ...
+    ...,
     "attachments": [
         {
             "content": "document in base64",
