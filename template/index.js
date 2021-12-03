@@ -1,23 +1,21 @@
 const barhandles = require('barhandles')
 const { readdirSync } = require('fs')
-const path = require('path')
+const { extname, join } = require('path')
+const response = require('../lib/get-response-object')
 
-const dirPath = `${__dirname}/../lib/templates`
+const dirPath = join(__dirname, '/../lib/templates')
 
 module.exports = async function (context, req) {
   const { template } = req.params
   const templates = []
 
   if (!template) {
-    return {
-      status: 400,
-      body: 'Template name missing in the url'
-    }
+    return response('Template name missing in the url', 400)
   }
 
   readdirSync(dirPath).forEach(fileName => {
     const templateBody = require(`${dirPath}/${fileName}`)()
-    const fileNameWithoutExtension = fileName.replace(path.extname(fileName), '')
+    const fileNameWithoutExtension = fileName.replace(extname(fileName), '')
 
     if ((template.toLowerCase() === 'all') || (template.toLowerCase() === fileNameWithoutExtension.toLowerCase())) {
       templates.push({
@@ -27,15 +25,10 @@ module.exports = async function (context, req) {
     }
   })
 
-  if (templates.length > 0) {
-    return {
-      status: 200,
-      body: (templates.length === 1 ? templates[0] : templates)
-    }
-  } else {
-    return {
-      status: 404,
-      body: 'No templates found...'
-    }
+  if (templates.length > 0) return response((templates.length === 1 ? templates[0] : templates))
+  else {
+    return response({
+      error: 'No templates found...'
+    }, 404)
   }
 }
