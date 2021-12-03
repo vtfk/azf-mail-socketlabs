@@ -6,7 +6,9 @@
   "scripts": {
     "refresh": "rm -rf node_modules && rm package-lock.json && npm i",
     "start": "func start",
-    "test": "standard"
+    "test": "standard",
+    "deploy:test": "func azure functionapp publish test-func-mail-socketlabs",
+    "deploy:prod": "func azure functionapp publish prod-func-mail-socketlabs-v1"
   },
   "keywords": [],
   "author": "Rune Moskvil Lyngås <rune.moskvil.lyngaas@vtfk.no>",
