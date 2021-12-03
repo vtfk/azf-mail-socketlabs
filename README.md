@@ -70,7 +70,7 @@ Create/Update **local.settings.json** with this:
     "template": {
         "templateName": "example",
         "templateData": {
-            "body": "<i>Something</i>.",
+            "body": "<i>Something</i>.", // can also be an array of strings
             "signature": {
                 "name": "Ola Nordmann",
                 "title": "Boss",
