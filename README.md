@@ -5,7 +5,7 @@
 ### Development setup
 
 Create/Update **local.settings.json** with this:
-```javascript
+```json
 {
     "IsEncrypted": false,
     "Values": {
@@ -32,7 +32,7 @@ Create/Update **local.settings.json** with this:
 
 ### without templating
 
-```javascript
+```json
 {
     "to": [
         "kari@nordmann.no",
@@ -53,7 +53,7 @@ Create/Update **local.settings.json** with this:
 
 ### with templating
 
-```javascript
+```json
 {
     "to": [
         "kari@nordmann.no",
@@ -86,7 +86,7 @@ Create/Update **local.settings.json** with this:
 
 ### with attachments
 
-```javascript
+```json
 {
     ...,
     "attachments": [
