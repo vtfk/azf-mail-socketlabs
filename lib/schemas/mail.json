@@ -1,0 +1,132 @@
+{
+  "type": "object",
+  "properties": {
+    "to": { 
+      "type": "array",
+      "minItems": 1,
+      "uniqueItems": true,
+      "items": {
+        "type": "string",
+        "format": "email"
+      }
+    },
+    "cc": { 
+      "type": "array",
+      "uniqueItems": true,
+      "items": {
+        "type": "string",
+        "format": "email"
+      }
+    },
+    "bcc": { 
+      "type": "array",
+      "uniqueItems": true,
+      "items": {
+        "type": "string",
+        "format": "email"
+      }
+    },
+    "from": { 
+      "type": "string"
+    },
+    "replyTo": { 
+      "type": "string"
+    },
+    "subject": { 
+      "type": "string"
+    },
+    "text": {
+      "type": "string"
+    },
+    "html": {
+      "type": "string"
+    },
+    "headers": {
+      "type": "object"
+    },
+    "attachments": {
+      "type": "array",
+      "minItems": 1,
+      "items": {
+        "type": "object",
+        "properties": {
+          "content": {
+            "type": "string",
+            "format": "base64"
+          },
+          "filename": {
+            "type": "string"
+          },
+          "type": {
+            "type": "string"
+          }
+        },
+        "required": [
+          "content",
+          "filename",
+          "type"
+        ]
+      }
+    },
+    "template": {
+      "type": "object",
+      "properties": {
+        "template": {
+          "type": "string"
+        },
+        "templateName": {
+          "type": "string"
+        },
+        "templateData": {
+          "type": "object",
+          "properties": {
+            "body": {
+              "type": "string"
+            },
+            "signature": {
+              "type": "object",
+              "properties": {
+                "company": {
+                  "type": "string"
+                },
+                "department": {
+                  "type": "string"
+                },
+                "mobile": {
+                  "type": "string"
+                },
+                "name": {
+                  "type": "string"
+                },
+                "phone": {
+                  "type": "string"
+                },
+                "title": {
+                  "type": "string"
+                },
+                "virksomhet": {
+                  "type": "string"
+                },
+                "webpage": {
+                  "type": "string",
+                  "format": "url"
+                }
+              }
+            }
+          },
+          "required": [
+            "body"
+          ]
+        }
+      },
+      "required": [
+        "templateData"
+      ]
+    }
+  },
+  "required": [
+    "to",
+    "from",
+    "subject"
+  ]
+}
