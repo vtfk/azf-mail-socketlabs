@@ -26,9 +26,7 @@ Create/Update **local.settings.json** with this:
     1. SOCKETLABS_SERVER_ID
     1. SOCKETLABS_API_KEY
 
-## Inputs (POST)
-
-/mail
+## **POST** `/mail`
 
 ### without templating
 
@@ -99,11 +97,15 @@ Create/Update **local.settings.json** with this:
 }
 ```
 
-## Get template handlebars (GET) (*template/{template}*)
+## **GET** `/template/{template}`
+
+Get template handlebars
 
 ### Get all templates
-/template/all
+
+**/template/all**
 
 
 ### Get specific template
-/template/example
+
+**/template/example**
