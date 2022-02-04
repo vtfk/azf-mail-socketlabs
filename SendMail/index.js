@@ -6,7 +6,7 @@ const response = require('../lib/get-response-object')
 
 module.exports = async function (context, req) {
   const message = req.body
-  const { validationMatched, validationError, validationMessage } = await validateInput(context, message)
+  const { validationMatched, validationError, validationMessage } = validateInput(context, message)
   if (!validationMatched) {
     console.log('Message:', validationMessage)
     console.log('Err:', validationError)
