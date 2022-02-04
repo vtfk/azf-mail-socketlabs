@@ -1,14 +1,13 @@
 {
   "name": "azf-mail-sendgrid",
-  "version": "1.0.0",
+  "version": "0.1.0",
   "description": "",
   "main": "index.js",
   "scripts": {
     "refresh": "rm -rf node_modules && rm package-lock.json && npm i",
     "start": "func start",
     "test": "standard && jest",
-    "deploy:test": "func azure functionapp publish test-func-mail-socketlabs",
-    "deploy:prod": "func azure functionapp publish prod-func-mail-socketlabs-v1"
+    "deploy:test": "func azure functionapp publish test-func-mail-api-v1"
   },
   "keywords": [],
   "author": "Rune Moskvil Lyngås <rune.moskvil.lyngaas@vtfk.no>",
