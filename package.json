@@ -6,7 +6,7 @@
   "scripts": {
     "refresh": "rm -rf node_modules && rm package-lock.json && npm i",
     "start": "func start",
-    "test": "standard",
+    "test": "standard && jest",
     "deploy:test": "func azure functionapp publish test-func-mail-socketlabs",
     "deploy:prod": "func azure functionapp publish prod-func-mail-socketlabs-v1"
   },
@@ -22,6 +22,18 @@
     "handlebars": "4.7.7"
   },
   "devDependencies": {
+    "jest": "27.4.7",
     "standard": "16.0.4"
+  },
+  "standard": {
+    "env": [
+      "jest"
+    ]
+  },
+  "jest": {
+    "testMatch": [
+      "**/tests/**/*.[jt]s?(x)",
+      "**/?(*.)+.(spec|test).[jt]s?(x)"
+    ]
   }
 }
