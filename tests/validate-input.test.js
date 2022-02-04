@@ -380,13 +380,13 @@ describe('Validation fails when "template"', () => {
     expect(validationMessage).toBe(validationMsg)
   })
 
-  test('"templateData.body" is not a string', () => {
+  test('"templateData.body" is not a string and not an array', () => {
     const invalid = JSON.parse(JSON.stringify(templatePaylod))
-    invalid.template.templateData.body = []
+    invalid.template.templateData.body = {}
 
     const { validationMatched, validationError, validationMessage } = validate(mockedContext, invalid)
     expect(validationMatched).toBe(false)
-    expect(validationError.filter(err => err.message === 'must be string' && err.property.includes('body')).length).toBe(1)
+    expect(validationError.filter(err => (err.message === 'must be string' || err.message === 'must be array' || err.message === 'must match a schema in anyOf') && err.property.includes('body')).length).toBe(3)
     expect(validationMessage).toBe(validationMsg)
   })
 
@@ -492,8 +492,21 @@ describe('Validation fails when "template"', () => {
 })
 
 describe('Validation succeeds', () => {
-  test('When "template.templateData.body" is present', () => {
+  test('When "template.templateData.body" is present as string', () => {
     const { validationMatched, validationError, validationMessage } = validate(mockedContext, templatePaylod)
+    expect(validationMatched).toBe(true)
+    expect(validationError).toBe(undefined)
+    expect(validationMessage).toBe(undefined)
+  })
+
+  test('When "template.templateData.body" is present as array of strings', () => {
+    const valid = JSON.parse(JSON.stringify(templatePaylod))
+    valid.template.templateData.body = [
+      '<b>This is a test<b>',
+      '<i>Hello world<i>'
+    ]
+
+    const { validationMatched, validationError, validationMessage } = validate(mockedContext, valid)
     expect(validationMatched).toBe(true)
     expect(validationError).toBe(undefined)
     expect(validationMessage).toBe(undefined)

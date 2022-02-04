@@ -83,7 +83,18 @@
           "type": "object",
           "properties": {
             "body": {
-              "type": "string"
+              "anyOf": [
+                {
+                  "type": "string"
+                },
+                {
+                  "type": "array",
+                  "minItems": 1,
+                  "items": {
+                    "type": "string"
+                  }
+                }
+              ]
             },
             "signature": {
               "type": "object",
