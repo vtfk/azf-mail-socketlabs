@@ -6,7 +6,7 @@ const mockedContext = {
 
 const templatePaylod = {
   to: [
-    'to@example.com',
+    'to@example.com'
   ],
   from: 'from@example.com',
   subject: 'Hello there',
@@ -287,7 +287,7 @@ describe('Validation fails when "attachments"', () => {
     const invalid = JSON.parse(JSON.stringify(templatePaylod))
     invalid.attachments = [
       {
-        content: "JVBERi0xLjcKCjEgMCBvYmogICUgZW50cnkgcG9pbnQKPDwKICAvVHlwZSAvQ2F0YWxvZwogIC9QYWdlcyAyIDAgUgo+PgplbmRvYmoKCjIgMCBvYmoKPDwKICAvVHlwZSAvUGFnZXMKICAvTWVkaWFCb3ggWyAwIDAgMjAwIDIwMCBdCiAgL0NvdW50IDEKICAvS2lkcyBbIDMgMCBSIF0KPj4KZW5kb2JqCgozIDAgb2JqCjw8CiAgL1R5cGUgL1BhZ2UKICAvUGFyZW50IDIgMCBSCiAgL1Jlc291cmNlcyA8PAogICAgL0ZvbnQgPDwKICAgICAgL0YxIDQgMCBSIAogICAgPj4KICA+PgogIC9Db250ZW50cyA1IDAgUgo+PgplbmRvYmoKCjQgMCBvYmoKPDwKICAvVHlwZSAvRm9udAogIC9TdWJ0eXBlIC9UeXBlMQogIC9CYXNlRm9udCAvVGltZXMtUm9tYW4KPj4KZW5kb2JqCgo1IDAgb2JqICAlIHBhZ2UgY29udGVudAo8PAogIC9MZW5ndGggNDQKPj4Kc3RyZWFtCkJUCjcwIDUwIFRECi9GMSAxMiBUZgooSGVsbG8sIHdvcmxkISkgVGoKRVQKZW5kc3RyZWFtCmVuZG9iagoKeHJlZgowIDYKMDAwMDAwMDAwMCA2NTUzNSBmIAowMDAwMDAwMDEwIDAwMDAwIG4gCjAwMDAwMDAwNzkgMDAwMDAgbiAKMDAwMDAwMDE3MyAwMDAwMCBuIAowMDAwMDAwMzAxIDAwMDAwIG4gCjAwMDAwMDAzODAgMDAwMDAgbiAKdHJhaWxlcgo8PAogIC9TaXplIDYKICAvUm9vdCAxIDAgUgo+PgpzdGFydHhyZWYKNDkyCiUlRU9G"
+        content: 'JVBERi0xLjcKCjEgMCBvYmogICUgZW50cnkgcG9pbnQKPDwKICAvVHlwZSAvQ2F0YWxvZwogIC9QYWdlcyAyIDAgUgo+PgplbmRvYmoKCjIgMCBvYmoKPDwKICAvVHlwZSAvUGFnZXMKICAvTWVkaWFCb3ggWyAwIDAgMjAwIDIwMCBdCiAgL0NvdW50IDEKICAvS2lkcyBbIDMgMCBSIF0KPj4KZW5kb2JqCgozIDAgb2JqCjw8CiAgL1R5cGUgL1BhZ2UKICAvUGFyZW50IDIgMCBSCiAgL1Jlc291cmNlcyA8PAogICAgL0ZvbnQgPDwKICAgICAgL0YxIDQgMCBSIAogICAgPj4KICA+PgogIC9Db250ZW50cyA1IDAgUgo+PgplbmRvYmoKCjQgMCBvYmoKPDwKICAvVHlwZSAvRm9udAogIC9TdWJ0eXBlIC9UeXBlMQogIC9CYXNlRm9udCAvVGltZXMtUm9tYW4KPj4KZW5kb2JqCgo1IDAgb2JqICAlIHBhZ2UgY29udGVudAo8PAogIC9MZW5ndGggNDQKPj4Kc3RyZWFtCkJUCjcwIDUwIFRECi9GMSAxMiBUZgooSGVsbG8sIHdvcmxkISkgVGoKRVQKZW5kc3RyZWFtCmVuZG9iagoKeHJlZgowIDYKMDAwMDAwMDAwMCA2NTUzNSBmIAowMDAwMDAwMDEwIDAwMDAwIG4gCjAwMDAwMDAwNzkgMDAwMDAgbiAKMDAwMDAwMDE3MyAwMDAwMCBuIAowMDAwMDAwMzAxIDAwMDAwIG4gCjAwMDAwMDAzODAgMDAwMDAgbiAKdHJhaWxlcgo8PAogIC9TaXplIDYKICAvUm9vdCAxIDAgUgo+PgpzdGFydHhyZWYKNDkyCiUlRU9G'
       }
     ]
 
@@ -342,7 +342,7 @@ describe('Validation fails when "template"', () => {
 
   test('Both "template" and "templateName" is present', () => {
     const invalid = JSON.parse(JSON.stringify(templatePaylod))
-    invalid.template.template = "<html></html>"
+    invalid.template.template = '<html></html>'
 
     const { validationMatched, validationError, validationMessage } = validate(mockedContext, invalid)
     expect(validationMatched).toBe(false)
@@ -359,11 +359,11 @@ describe('Validation fails when "template"', () => {
     expect(validationError.filter(err => err.message === 'must have required property \'templateData\'' && err.property.includes('template')).length).toBe(1)
     expect(validationMessage).toBe(validationMsg)
   })
-  
+
   test('"templateData" is not an object', () => {
     const invalid = JSON.parse(JSON.stringify(templatePaylod))
     invalid.template.templateData = []
-    
+
     const { validationMatched, validationError, validationMessage } = validate(mockedContext, invalid)
     expect(validationMatched).toBe(false)
     expect(validationError.filter(err => err.message === 'must be object' && err.property.includes('templateData')).length).toBe(1)
@@ -373,37 +373,37 @@ describe('Validation fails when "template"', () => {
   test('"templateData.body" is missing', () => {
     const invalid = JSON.parse(JSON.stringify(templatePaylod))
     delete invalid.template.templateData.body
-    
+
     const { validationMatched, validationError, validationMessage } = validate(mockedContext, invalid)
     expect(validationMatched).toBe(false)
     expect(validationError.filter(err => err.message === 'must have required property \'body\'' && err.property.includes('templateData')).length).toBe(1)
     expect(validationMessage).toBe(validationMsg)
   })
-  
+
   test('"templateData.body" is not a string', () => {
     const invalid = JSON.parse(JSON.stringify(templatePaylod))
     invalid.template.templateData.body = []
-    
+
     const { validationMatched, validationError, validationMessage } = validate(mockedContext, invalid)
     expect(validationMatched).toBe(false)
     expect(validationError.filter(err => err.message === 'must be string' && err.property.includes('body')).length).toBe(1)
     expect(validationMessage).toBe(validationMsg)
   })
-  
+
   test('"templateData.signature" is not an object', () => {
     const invalid = JSON.parse(JSON.stringify(templatePaylod))
     invalid.template.templateData.signature = []
-    
+
     const { validationMatched, validationError, validationMessage } = validate(mockedContext, invalid)
     expect(validationMatched).toBe(false)
     expect(validationError.filter(err => err.message === 'must be object' && err.property.includes('signature')).length).toBe(1)
     expect(validationMessage).toBe(validationMsg)
   })
-  
+
   test('"templateData.signature.company" is not a string', () => {
     const invalid = JSON.parse(JSON.stringify(templatePaylod))
     invalid.template.templateData.signature.company = []
-    
+
     const { validationMatched, validationError, validationMessage } = validate(mockedContext, invalid)
     expect(validationMatched).toBe(false)
     expect(validationError.filter(err => err.message === 'must be string' && err.property.includes('company')).length).toBe(1)
@@ -413,17 +413,17 @@ describe('Validation fails when "template"', () => {
   test('"templateData.signature.department" is not a string', () => {
     const invalid = JSON.parse(JSON.stringify(templatePaylod))
     invalid.template.templateData.signature.department = []
-    
+
     const { validationMatched, validationError, validationMessage } = validate(mockedContext, invalid)
     expect(validationMatched).toBe(false)
     expect(validationError.filter(err => err.message === 'must be string' && err.property.includes('department')).length).toBe(1)
     expect(validationMessage).toBe(validationMsg)
   })
-  
+
   test('"templateData.signature.mobile" is not a string', () => {
     const invalid = JSON.parse(JSON.stringify(templatePaylod))
     invalid.template.templateData.signature.mobile = []
-    
+
     const { validationMatched, validationError, validationMessage } = validate(mockedContext, invalid)
     expect(validationMatched).toBe(false)
     expect(validationError.filter(err => err.message === 'must be string' && err.property.includes('mobile')).length).toBe(1)
@@ -433,7 +433,7 @@ describe('Validation fails when "template"', () => {
   test('"templateData.signature.name" is not a string', () => {
     const invalid = JSON.parse(JSON.stringify(templatePaylod))
     invalid.template.templateData.signature.name = []
-    
+
     const { validationMatched, validationError, validationMessage } = validate(mockedContext, invalid)
     expect(validationMatched).toBe(false)
     expect(validationError.filter(err => err.message === 'must be string' && err.property.includes('name')).length).toBe(1)
@@ -443,7 +443,7 @@ describe('Validation fails when "template"', () => {
   test('"templateData.signature.phone" is not a string', () => {
     const invalid = JSON.parse(JSON.stringify(templatePaylod))
     invalid.template.templateData.signature.phone = []
-    
+
     const { validationMatched, validationError, validationMessage } = validate(mockedContext, invalid)
     expect(validationMatched).toBe(false)
     expect(validationError.filter(err => err.message === 'must be string' && err.property.includes('phone')).length).toBe(1)
@@ -453,7 +453,7 @@ describe('Validation fails when "template"', () => {
   test('"templateData.signature.title" is not a string', () => {
     const invalid = JSON.parse(JSON.stringify(templatePaylod))
     invalid.template.templateData.signature.title = []
-    
+
     const { validationMatched, validationError, validationMessage } = validate(mockedContext, invalid)
     expect(validationMatched).toBe(false)
     expect(validationError.filter(err => err.message === 'must be string' && err.property.includes('title')).length).toBe(1)
@@ -463,7 +463,7 @@ describe('Validation fails when "template"', () => {
   test('"templateData.signature.virksomhet" is not a string', () => {
     const invalid = JSON.parse(JSON.stringify(templatePaylod))
     invalid.template.templateData.signature.virksomhet = []
-    
+
     const { validationMatched, validationError, validationMessage } = validate(mockedContext, invalid)
     expect(validationMatched).toBe(false)
     expect(validationError.filter(err => err.message === 'must be string' && err.property.includes('virksomhet')).length).toBe(1)
@@ -473,7 +473,7 @@ describe('Validation fails when "template"', () => {
   test('"templateData.signature.webpage" is not a string', () => {
     const invalid = JSON.parse(JSON.stringify(templatePaylod))
     invalid.template.templateData.signature.webpage = []
-    
+
     const { validationMatched, validationError, validationMessage } = validate(mockedContext, invalid)
     expect(validationMatched).toBe(false)
     expect(validationError.filter(err => err.message === 'must be string' && err.property.includes('webpage')).length).toBe(1)
@@ -483,7 +483,7 @@ describe('Validation fails when "template"', () => {
   test('"templateData.signature.webpage" is not in url format', () => {
     const invalid = JSON.parse(JSON.stringify(templatePaylod))
     invalid.template.templateData.signature.webpage = 'vg.no'
-    
+
     const { validationMatched, validationError, validationMessage } = validate(mockedContext, invalid)
     expect(validationMatched).toBe(false)
     expect(validationError.filter(err => err.message === 'must match format "url"' && err.property.includes('webpage')).length).toBe(1)
