@@ -12,6 +12,7 @@
     },
     "cc": { 
       "type": "array",
+      "minItems": 1,
       "uniqueItems": true,
       "items": {
         "type": "string",
@@ -20,6 +21,7 @@
     },
     "bcc": { 
       "type": "array",
+      "minItems": 1,
       "uniqueItems": true,
       "items": {
         "type": "string",
