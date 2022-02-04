@@ -16,7 +16,7 @@
   "dependencies": {
     "@socketlabs/email": "1.2.1",
     "@vtfk/e18": "2.0.3",
-    "ajv": "8.9.0",
+    "ajv": "8.10.0",
     "ajv-base64": "1.0.0",
     "ajv-formats": "2.1.1",
     "barhandles": "0.5.4",
