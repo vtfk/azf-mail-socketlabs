@@ -460,13 +460,13 @@ describe('Validation fails when "template"', () => {
     expect(validationMessage).toBe(validationMsg)
   })
 
-  test('"templateData.signature.virksomhet" is not a string', () => {
+  test('"templateData.signature.virksomhet" is not a boolean', () => {
     const invalid = JSON.parse(JSON.stringify(templatePaylod))
-    invalid.template.templateData.signature.virksomhet = []
+    invalid.template.templateData.signature.virksomhet = 'true'
 
     const { validationMatched, validationError, validationMessage } = validate(mockedContext, invalid)
     expect(validationMatched).toBe(false)
-    expect(validationError.filter(err => err.message === 'must be string' && err.property.includes('virksomhet')).length).toBe(1)
+    expect(validationError.filter(err => err.message === 'must be boolean' && err.property.includes('virksomhet')).length).toBe(1)
     expect(validationMessage).toBe(validationMsg)
   })
 

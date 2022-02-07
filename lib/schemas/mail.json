@@ -118,7 +118,7 @@
                   "type": "string"
                 },
                 "virksomhet": {
-                  "type": "string"
+                  "type": "boolean"
                 },
                 "webpage": {
                   "type": "string",
