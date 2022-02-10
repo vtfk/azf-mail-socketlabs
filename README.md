@@ -16,7 +16,8 @@ Create/Update **local.settings.json** with this:
     "SOCKETLABS_API_KEY": "your-socketlabs-api-key",
     "E18_URL": "https://e18url.net", // optional
     "E18_KEY": "secret token", // optional
-    "E18_SYSTEM": "dsf" // optional
+    "E18_SYSTEM": "dsf", // optional
+    "E18_EMPTY_JOB": true // optional
   },
   "ConnectionStrings": {}
 }
@@ -24,7 +25,7 @@ Create/Update **local.settings.json** with this:
 
 ### E18
 
-To support E18, add `E18_URL`, `E18_KEY` and `E18_SYSTEM`
+To support [E18](https://github.com/vtfk/e18-node#usage), add `E18_URL`, `E18_KEY` and `E18_SYSTEM`
 
 ### Setup in Azure
 
