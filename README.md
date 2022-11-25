@@ -93,6 +93,8 @@ To support [E18](https://github.com/vtfk/e18-node#usage), add `E18_URL`, `E18_KE
 ### bulk send
 When you don't want the receivers to see the other receivers
 
+**REMARK: When using bulk - you will receive status 200, and list of suceeded and failed mails. You must retry failed yourself, if you want to**
+
 Add `"type": 'bulk'` to the payload to enable bulk send
 
 *Works for both templating and not templating*
