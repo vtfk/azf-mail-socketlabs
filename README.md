@@ -90,6 +90,35 @@ To support [E18](https://github.com/vtfk/e18-node#usage), add `E18_URL`, `E18_KE
 }
 ```
 
+### bulk send
+When you don't want the receivers to see the other receivers
+
+Add `"type": 'bulk'` to the payload to enable bulk send
+
+*Works for both templating and not templating*
+
+
+```json
+{
+  "to": [
+    "kari@nordmann.no",
+    "bjarne@nordmann.no"
+  ],
+  "cc": [
+    "kjartan@nordmann.no"
+  ],
+  "bcc": [
+    "rolf@nordmann.no"
+  ],
+  "type": "bulk", // Like this
+  "from": "Ola Nordmann <ola@nordmann.no>",
+  "subject": "Test",
+  "text": "Heihei",
+  "html": "<b>Heihei</b>"
+}
+```
+
+
 ### with attachments
 
 ```json
